@@ -1,11 +1,9 @@
 def izmena(func):
-    def wrapper(*args, **kwargs):
-        val = func(*args, **kwargs)
-        val = val.upper() + "!"
-        return val
-    return wrapper()
+    def wrapper(n):
+        func(n.upper())
+    return wrapper
 
-#@izmena
-def name(a):
-    print("Привет " + a)
+@izmena
+def name(n):
+    print(f"Привет+ {n}")
 name(input("Введите имя "))
